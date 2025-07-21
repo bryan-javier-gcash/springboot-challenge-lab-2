@@ -85,19 +85,4 @@ public class ProductController {
         return productService.update(id, updatedProduct).map(ResponseEntity::ok).orElseGet(()-> ResponseEntity.notFound().build()) ;
     }
 
-    @GetMapping("/search")
-    public Page<Product> productSearch(
-            @RequestParam(value = "page", required = false, defaultValue = "0") Integer page,
-            @RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
-            @RequestParam(value = "sortBy", required = false, defaultValue = "asc") String sortBy,
-            @RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
-        Pageable pageable;
-        if (sortBy.equalsIgnoreCase("desc")){
-            pageable = PageRequest.of(page, size, Sort.by("id").descending());
-        } else {
-            pageable = PageRequest.of(page, size, Sort.by("id").ascending());
-        }
-
-        return productService.findByNameContainingIgnoreCase(searchKeyword, pageable);
-    }
 }

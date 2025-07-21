@@ -15,5 +15,4 @@ public interface ProductService {
     Optional<Product> update(Long id, Product newProduct);
     Optional<Product> patch(Long id, Product patchProduct);
     boolean deleteProduct(Long id);
-    Page<Product> findByNameContainingIgnoreCase(String name, Pageable pageable);
 }
