@@ -72,17 +72,5 @@ public class ProductServiceImpl implements ProductService{
 
     }
 
-    @Override
-    public Page<Product> findByNameContainingIgnoreCase(String name, Pageable pageable) {
-        Page<Product> productsFiltered;
-        if (name != null) {
-            productsFiltered = productRepository.findByNameContainingIgnoreCase(name, pageable);
-        } else {
-            productsFiltered = productRepository.findAll(pageable);
-        }
-
-        return productsFiltered;
-    }
-
 
 }

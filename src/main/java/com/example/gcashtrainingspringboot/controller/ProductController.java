@@ -3,22 +3,17 @@ package com.example.gcashtrainingspringboot.controller;
 import com.example.gcashtrainingspringboot.dto.ProductRequest;
 import com.example.gcashtrainingspringboot.dto.ProductResponse;
 import com.example.gcashtrainingspringboot.model.Product;
-import com.example.gcashtrainingspringboot.repository.ProductRepository;
 import com.example.gcashtrainingspringboot.service.ProductService;
-import com.example.gcashtrainingspringboot.service.ProductServiceImpl;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
